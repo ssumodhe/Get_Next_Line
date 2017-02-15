@@ -6,7 +6,7 @@
 /*   By: ssumodhe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 15:24:38 by ssumodhe          #+#    #+#             */
-/*   Updated: 2017/02/15 18:52:27 by ssumodhe         ###   ########.fr       */
+/*   Updated: 2017/02/15 16:16:30 by ssumodhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int		ft_while_read(char *buff, char **line, char **stock)
 		*stock = ft_strdup(ft_strchr(buff, '\n') + 1);
 		if ((*stock)[0] == '\0')
 			ft_strdel(stock);
-			//*stock = NULL;
+		//	*stock = NULL;
 		return (1);
 	}
 	return (0);
@@ -63,13 +63,14 @@ int		ft_if_stock(char **stock, char **line)
 	int		i;
 	char 	*tmp;
 
+//	if (!(*stock) && stock[0] == '\0')
 	if (!(*stock))
 		return (0);
 	if (ft_strchr(*stock, '\n') == NULL)
 	{
 		*line = ft_strdup(*stock);
 		ft_strdel(stock);
-		//*stock = NULL;
+		//(*stock) = NULL;
 	}
 	else
 	{
@@ -81,8 +82,8 @@ int		ft_if_stock(char **stock, char **line)
 		*stock = ft_strdup(ft_strchr(tmp, '\n') + 1);
 		ft_strdel(&tmp);
 		if ((*stock)[0] == '\0')
-			//*stock = NULL;
 			ft_strdel(stock);
+		//	*stock = NULL;
 		return (1);
 	}
 	return (0);
@@ -94,32 +95,31 @@ int		get_next_line(const int fd, char **line)
 	char		*buff;
 	static char	*stock;
 
-	if (fd < 0 || !line)
-		return (-1);
+	//if (fd < 0 || !line)
+	//	return (-1);
 	*line = NULL;
 	if (ft_if_stock(&stock, line) == 1)
 		return (1);
 	if (!(buff = ft_strnew(BUFF_SIZE)))
 		return (-1);
-	while ((octet = read(fd, buff, BUFF_SIZE)) != 0)
+	while ((octet = read(fd, buff, BUFF_SIZE)) != 0) //leak?
 	{
 		if (octet < 0)
 		{
-	//		ft_strdel(&buff);
+			ft_strdel(&buff);
 			return (-1);
 		}
 		buff[octet] = '\0';
 		if (ft_while_read(buff, line, &stock) == 1)
 		{
-	//		ft_strdel(&buff);
+			ft_strdel(&buff);
 			return (1);
 		}
 	}
 	if (*line != NULL)
 	{
-		//ft_strdel(&buff);
+		ft_strdel(&buff);
 		return (1);
 	}
-	//ft_strdel(&buff);
 	return (0);
 }
