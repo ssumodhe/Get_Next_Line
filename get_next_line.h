@@ -6,7 +6,7 @@
 /*   By: ssumodhe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 14:25:41 by ssumodhe          #+#    #+#             */
-/*   Updated: 2017/02/02 21:20:32 by ssumodhe         ###   ########.fr       */
+/*   Updated: 2017/02/16 16:11:22 by ssumodhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <sys/stat.h>
 # include "libft/libft.h"
 
-#define BUFF_SIZE 100
+# define BUFF_SIZE 3
 
 # define RESET	   "\033[0m"
 # define HIGHLIGHT "\033[1m"
@@ -33,11 +33,14 @@
 # define CYAN      "\033[36m"
 # define WHITE     "\033[37m"
 
-typedef	struct	s_GNL
+typedef	struct	s_gnl
 {
-	char	*Clem;
-	char	*Join;
-}				t_GNL;
+	int				fd;
+	char			*stock;
+	struct s_gnl	*next;
+}				t_gnl;
+
+t_gnl			*ft_fd_find_create(int fd, t_gnl **file);
 
 int				get_next_line(const int fd, char **line);
 
