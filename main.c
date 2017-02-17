@@ -6,7 +6,7 @@
 /*   By: ssumodhe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 19:33:29 by ssumodhe          #+#    #+#             */
-/*   Updated: 2017/02/02 20:42:51 by ssumodhe         ###   ########.fr       */
+/*   Updated: 2017/02/17 19:20:22 by ssumodhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,28 +39,47 @@ int		main(int argc, char **argv)
 	else		
 		printf("return != 1\n");*/
 
-
 	nombre = 1;
 	//while (get_next_line(fd, &line) == 1)
 	while ((ret = get_next_line(fd, &line)) == 1)
 	{
+/*		ft_putstr(YELLOW);
+		ft_putstr("MAIN | ret = ");
+		ft_putnbr(ret);
+		ft_putendl("");*/
 	//	printf(YELLOW"MAIN | Line : \n"RED"<\""RESET"%s"RED"\">\n\n"RESET, line);
 	//	printf(YELLOW"MAIN | Return : %d\n\n"RESET, ret);
-		//ft_putstr(YELLOW);
+//		ft_putstr(YELLOW);
 
 		//ft_putnbr(nombre);
 		//ft_putchar(' ');
-		ft_putendl(line);
+/*		ft_putstr("Line = ");
+		ft_putstr(RED);
+		ft_putstr("<");
+		ft_putstr(YELLOW);*/
+		ft_putstr(line);
+//		ft_putstr(RED);
+/*		ft_putstr(">");
+		ft_putendl("");*/
 		//ft_putnbr(ft_strlen(line));
 		//ft_putendl("");
-		//ft_putstr(RESET);
+//		ft_putstr(RESET);
 		//if (ft_strlen(line) != 64)
 		//	break ;
 		ft_strdel(&line);
 		//nombre++;
 	}
+
+//	while(1);
+
+/*	ft_putstr("------------------------\n");
+	ft_putstr(YELLOW);
+	ft_putendl("MAIN | THE END");
+	ft_putstr(RESET);
+	ft_putnbr(ret);
+	ft_putendl("");
 	//ft_putstr(YELLOW);
-	ft_putendl(line);
+	ft_putendl(line);*/
 	//ft_putstr(RESET);
 //	printf(YELLOW"MAIN | THE END Line : %s\n\n"RESET, line);
 //	printf(YELLOW"MAIN | Return : %d\n\n"RESET, ret);

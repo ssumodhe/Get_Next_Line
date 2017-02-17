@@ -6,7 +6,7 @@
 /*   By: ssumodhe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 19:33:29 by ssumodhe          #+#    #+#             */
-/*   Updated: 2017/02/16 17:22:08 by ssumodhe         ###   ########.fr       */
+/*   Updated: 2017/02/17 15:37:16 by ssumodhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,28 +45,48 @@ int		main(int argc, char **argv)
 
 
 	count = 0;
+//	ft_putstr(HIGHLIGHT UNDERLINE GREEN);
+//	ft_putendl(argv[1]);
+//	ft_putstr(RESET);
 	while (count <= 1)
 	{
 		ret = get_next_line(fd_1, &line);
-		ft_putstr(HIGHLIGHT GREEN);
+//		ft_putstr(HIGHLIGHT GREEN);
 		ft_putendl(line);
-		ft_putstr(RESET);
+//		ft_putstr(RESET);
 		count++;
 	}
+//		ft_putstr(HIGHLIGHT UNDERLINE YELLOW);
+//		ft_putendl(argv[2]);
+//		ft_putstr(RESET);
 	while (count <= 3)
 	{
 		ret = get_next_line(fd_2, &line);
-		ft_putstr(HIGHLIGHT YELLOW);
+//		ft_putstr(HIGHLIGHT YELLOW);
 		ft_putendl(line);
-		ft_putstr(RESET);
+//		ft_putstr(RESET);
 		count++;
 	}
+//	ft_putstr(HIGHLIGHT UNDERLINE GREEN);
+//	ft_putendl(argv[1]);
+//	ft_putstr(RESET);
 	while (count <= 5)
 	{
-		ret = get_next_line(fd_3, &line);
-		ft_putstr(HIGHLIGHT CYAN);
+		ret = get_next_line(fd_1, &line);
+	//	ft_putstr(HIGHLIGHT GREEN);
 		ft_putendl(line);
-		ft_putstr(RESET);
+	//	ft_putstr(RESET);
+		count++;
+	}
+		//ft_putstr(HIGHLIGHT UNDERLINE CYAN);
+		//ft_putendl(argv[3]);
+		//ft_putstr(RESET);
+	while (count <= 7)
+	{
+		ret = get_next_line(fd_3, &line);
+		//ft_putstr(HIGHLIGHT CYAN);
+		ft_putendl(line);
+		//ft_putstr(RESET);
 		count++;
 	}
 
