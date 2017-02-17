@@ -6,7 +6,7 @@
 /*   By: ssumodhe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 14:25:41 by ssumodhe          #+#    #+#             */
-/*   Updated: 2017/02/16 16:11:22 by ssumodhe         ###   ########.fr       */
+/*   Updated: 2017/02/17 16:11:02 by ssumodhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <sys/stat.h>
 # include "libft/libft.h"
 
-# define BUFF_SIZE 3
+# define BUFF_SIZE 16
 
 # define RESET	   "\033[0m"
 # define HIGHLIGHT "\033[1m"
