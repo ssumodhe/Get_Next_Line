@@ -6,7 +6,7 @@
 /*   By: ssumodhe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 15:24:38 by ssumodhe          #+#    #+#             */
-/*   Updated: 2017/02/17 15:36:17 by ssumodhe         ###   ########.fr       */
+/*   Updated: 2017/02/17 16:59:45 by ssumodhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,7 +168,7 @@ int		ft_if_stock(char **stock, char **line)
 int		get_next_line(const int fd, char **line)
 {
 	int			octet;
-	char		*buff;
+	char		buff[BUFF_SIZE + 1];
 //	static char	*stock;
 	static t_gnl	*file;
 	t_gnl			*tmp_file;
@@ -184,8 +184,8 @@ int		get_next_line(const int fd, char **line)
 //	printf("STOCK  = %s\n" RESET, stock);
 	if (ft_if_stock(&tmp_file->stock, line) == 1)
 		return (1);
-	if (!(buff = ft_strnew(BUFF_SIZE)))
-		return (-1);
+//	if (!(buff = ft_strnew(BUFF_SIZE)))
+//		return (-1);
 	while ((octet = read(fd, buff, BUFF_SIZE)) != 0)
 	{
 		if (octet < 0)
